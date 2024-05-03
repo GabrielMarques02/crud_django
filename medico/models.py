@@ -14,7 +14,7 @@ class Medico(models.Model):
     endereco = models.CharField(verbose_name='Endereço', max_length=200)
     email = models.EmailField(verbose_name='Email',)
     crm = models.CharField(verbose_name='CRM', max_length=11)
-    telefone = models.CharField(verbose_name='Telefone', validators=[])
+    telefone = models.CharField(verbose_name='Telefone',max_length=15 , validators=[])
     especialidade = ForeignKey(Especialidade, on_delete= models.CASCADE, blank=False, related_name='medico')
     
     def __str__(self):
